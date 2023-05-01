@@ -1,0 +1,28 @@
+{
+  "name": "oop-tdd-practice",
+  "version": "1.0.0",
+  "description": "Clone the GitHub repository from the button below.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appacademy/assessment-for-sprint-04-practice-a-tdd-oop-practice-vehicle-reviews.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/appacademy/assessment-for-sprint-04-practice-a-tdd-oop-practice-vehicle-reviews/issues"
+  },
+  "homepage": "https://github.com/appacademy/assessment-for-sprint-04-practice-a-tdd-oop-practice-vehicle-reviews#readme"
+}
