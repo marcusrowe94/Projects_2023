@@ -17,15 +17,17 @@ console.log(longestWord('')); // ''
 */
 
 let longestWord = function(sentence) {
-let words = sentence.split(' ')
-let longest = ' '
- words.forEach(word => {
-    if( word.length > longest){
-        longest = word
-    }
-});
- return longest   // Your code here
-};
+const sentenceArray = sentence.split(" ")
+let max = -Infinity
+let longest = ''
+ sentenceArray.map((word)=>{
+if(max < word.length){
+    longest = word
+    max = word.length
+}
+})
+return longest
+}
 
 // Your code here
 

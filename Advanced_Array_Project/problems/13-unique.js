@@ -15,14 +15,19 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 */
 
 let unique = function(array) {
-
-    let arr =[]
-   return array.map(( element) => {
-        if(indexOf(element) === -1){
-            arr.push(element)
+    let set = new Set()
+    let arr = []
+    array.map((ele)=>{
+        if(!set.has(ele)){
+            set.add(ele)
+            arr.push(ele)
         }
+
+
+
     })
-};
+    return arr
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

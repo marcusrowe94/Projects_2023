@@ -8,31 +8,35 @@ methods.
 
 Examples:
 
-console.log(hasThreeVowels('delicious'));       //  true
-console.log(hasThreeVowels('bootcamp prep'));   //  true
-console.log(hasThreeVowels('bootcamp'));        //  false
-console.log(hasThreeVowels('dog'));             //  false
-console.log(hasThreeVowels('go home'));         //  false
 
 */
 
-let hasThreeVowels = function(string) {
-    let count = 0
-    let vowels = 'aeiou'
-    string.split("").forEach(function(char){
-      if(vowels.includes(char.toLowerCase()) && count < 3)
-          count++
+function hasThreeVowels(string) {
+  // let arr = string.split("");
+  const vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
 
-    });
-  return  count >= 3
-  };
+  for (const letter of vowels) {
+    if (string.indexOf(letter) !== -1) {
+      count++
+      if( count >= 3 ) return true
+    }
+  }
+  return false
+}
 
-// Your code here
+console.log(hasThreeVowels("delicious")); //  true
+console.log(hasThreeVowels("bootcamp prep")); //  true
+console.log(hasThreeVowels("bootcamp")); //  false
+console.log(hasThreeVowels("dog")); //  false
+console.log(hasThreeVowels("go home")); //  false
+
+// // Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = hasThreeVowels;
+  module.exports = hasThreeVowels;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }
