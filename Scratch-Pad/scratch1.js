@@ -9,9 +9,6 @@
 
 // }
 
-// const logBetween = ((lowNum, highNum)=>{
-// let array = [lowNum, highNum]
-// return array.filter((ele)=> ele <= highNum)
 
 // })
 // const A = true
@@ -30,7 +27,15 @@
 // 0    1       ?
 // 1    0       ?
 // 1    1       ?
+const select = (arr) =>{
 
-// console.log(logBetween(-1, 2));  // => [-1, 0, 1, 2]
-// console.log(logBetween(14, 6));  // => []
-// console.log(logBetween(4, 6));  // => [4, 5, 6]
+const mid = Math.floor(arr.length) /2
+console.log(mid, "mid")
+
+
+}
+
+
+console.log(select([-1, 2, -9]));  // => [-1, 2, -9,]
+console.log(select([14, 6, 9, 8]));  // => [6, 8, 9, 14]
+console.log(select([4, 6, -8]));  // => [-8, 4, 6]

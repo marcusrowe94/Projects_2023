@@ -20,11 +20,11 @@ function islandSize(row, col, graph, visited = new Set(), size = 0) {
   // Initialize size to 0
   // While the stack is not empty,
   while (stack.length) {
-    const currentNode = stack.pop();
-    visited.add(String(currentNode));
+    const currentNodeCoordinates = stack.pop();
+    visited.add(String(currentNodeCoordinates));
     size++;
-    console.log(currentNode,"THE THING IM LOOKING FOR ***************************")
-    const [row, col] = currentNode
+    console.log(currentNodeCoordinates,"THE THING IM LOOKING FOR ***************************")
+    const [row, col] = currentNodeCoordinates
     const neighborHood = getNeighbors(row, col, graph);
     for (const neighbor of neighborHood) {
       if (!visited.has(String(neighbor))) {
