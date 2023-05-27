@@ -3,11 +3,12 @@ const bubble = (arr) => {
   while (swapped) {
     swapped = false
     for (let i = 0; i < arr.length; i++) {
-      let temp = arr[i];
+      // let temp = arr[i];
       if (arr[i] > arr[i + 1]) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]
         swapped = true;
-        arr[i] = arr[i + 1];
-        arr[i + 1] = temp;
+        // arr[i] = arr[i + 1];
+        // arr[i + 1] = temp;
 
       }
     }

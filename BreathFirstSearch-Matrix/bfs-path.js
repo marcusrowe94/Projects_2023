@@ -24,7 +24,7 @@ function bfsPath(matrix, startNode, endValue) {
 
     const curr = queue.shift();
     path.push(curr)
-    console.log(path)
+    // console.log(path)
     if(matrix[curr[0]][curr[1]] === endValue) return path;
 
     const neigbors = findNeighbors(curr, matrix)
