@@ -26,14 +26,15 @@ function countIslands(matrix, visited = new Set(), count = 0) {
   // Iterate through all indices in matrix
   for (let row = 0; row < matrix.length; row++) {
     for (let col = 0; col < matrix[row].length; col++) {
-      const coordinates = [row, col];
+      let node = [row, col];
       const valueAtCoordinates = matrix[row][col];
-      if (valueAtCoordinates === 1 && !visited.has(String(coordinates))) {
+      if (valueAtCoordinates === 1 && !visited.has(String(node))) {
         count++;
-        visited.add(String(coordinates));
-        const stack = [[row, col]]
+        visited.add(String(node));
+        const stack = [node]
         while (stack.length) {
-          let [row, col] = stack.pop();
+          node = stack.pop();
+          let [row, col] = node
           const neighborHood = getNeighbors(row, col, matrix);
           for(const [neighborRow , neighborCol] of neighborHood) {
             const valueOfCoordsInNeighborhood = matrix[neighborRow][neighborCol]
