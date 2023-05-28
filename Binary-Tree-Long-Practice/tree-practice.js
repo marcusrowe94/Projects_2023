@@ -42,9 +42,15 @@ function findMinBT(rootNode) {
 }
 
 function findMaxBT(rootNode) {
+  const queue = [];
   let max = rootNode.val;
-  if (rootNode.left) max = Math.max(findMaxBT(rootNode.left), max);
-  if (rootNode.right) max = Math.max(findMaxBT(rootNode.right), max);
+  queue.push(rootNode);
+  while (queue.length > 0) {
+    let node = queue.shift();
+    if (max < node.val) max = node.val;
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
   return max;
 }
 
@@ -190,20 +196,61 @@ function inOrderPredecessor(rootNode, target, order = []) {
 
 
 function deleteNodeBST(rootNode, target) {
-  // Do a traversal to find the node. Keep track of the parent
-  // Undefined if the target cannot be found
-  // Set target based on parent
-  // Case 0: Zero children and no parent:
-  //   return null
-  // Case 1: Zero children:
-  //   Set the parent that points to it to null
-  // Case 2: Two children:
-  //  Set the value to its in-order predecessor, then delete the predecessor
-  //  Replace target node with the left most child on its right side,
-  //  or the right most child on its left side.
-  //  Then delete the child that it was replaced with.
-  // Case 3: One child:
-  //   Make the parent point to the child
+    // Do a traversal to find the node. Keep track of the parent
+    const parent = getParentNode(rootNode, target);
+
+    let targetNode;
+    let direction;
+
+    // Set target based on parent
+    if (parent && parent.left && parent.left.val === target) {
+        targetNode = parent.left;
+        direction = "left";
+    }
+    if (parent && parent.right && parent.right.val === target) {
+        targetNode = parent.right;
+        direction = "right";
+    }
+
+    if (rootNode.val === target) targetNode = rootNode;
+
+    // Undefined if the target cannot be found
+    if (!targetNode) return targetNode;
+
+    // Case 0: Zero children and no parent:
+    //   return null
+    if (!parent && !targetNode.left && !targetNode.right) return null;
+
+    // Case 1: Zero children:
+    //   Set the parent that points to it to null
+    if (parent && !targetNode.left && !targetNode.right) {
+        parent[direction] = null;
+        return;
+    }
+
+    // Case 3: One child:
+    //   Make the parent point to the child
+    if (parent && targetNode.left && !targetNode.right) {
+        parent[direction] = targetNode.left;
+        return;
+    }
+    if (parent && !targetNode.left && targetNode.right) {
+        parent[direction] = targetNode.right;
+        return;
+    }
+
+    // Case 2: Two children:
+    //  Set the value to its in-order predecessor, then delete the predecessor
+    //  Replace target node with the left most child on its right side,
+    //  or the right most child on its left side.
+    //  Then delete the child that it was replaced with.
+    const pre = inOrderPredecessor(rootNode, target);
+    targetNode.val = pre;
+
+    if (targetNode.left && targetNode.left.val === pre) targetNode.left = null;
+    if (targetNode.right && targetNode.right.val === pre)
+        targetNode.right = null;
+
 }
 
 module.exports = {
