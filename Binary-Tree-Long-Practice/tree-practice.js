@@ -55,33 +55,17 @@ function findMaxBT(rootNode) {
 }
 
 function getHeight(rootNode) {
-  const stack = [];
-  stack.push(rootNode);
-  let height = 0;
+  if (!rootNode) {
+    return -1;
+}
+if (!rootNode.left && !rootNode.right) {
+    return 0;
+}
+let leftHeight = getHeight(rootNode.left);
+let rightHeight = getHeight(rootNode.right);
 
-  while (stack.length) {
-    let node = stack.pop();
+return Math.max(leftHeight, rightHeight) + 1;
 
-    if (!node) return -1;
-
-    if (!node.left && !node.right) {
-      return height;
-    }
-   else{
-      height++;
-    }
-
-    if (node.left) {
-      stack.push(node.left);
-
-    }
-
-    if (node.right) {
-      stack.push(node.right);
-    }
-  }
-
-  return height;
 }
 // if (!rootNode) return -1;
 
