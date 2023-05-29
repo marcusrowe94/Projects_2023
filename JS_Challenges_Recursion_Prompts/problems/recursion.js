@@ -173,8 +173,8 @@ const createArray = function (str) {
 
 // 17. Reverse the order of an array
 const reverseArr = function (array) {
-if(array.length <= 1 ) return array
-return reverseArr(array.slice(1)).concat(array[0]);
+  if (array.length <= 1) return array;
+  return reverseArr(array.slice(1)).concat(array[0]);
 };
 console.log(reverseArr([1, 2, 3, 4, 5]));
 
@@ -313,3 +313,4 @@ var mergeSort = function (array) {};
 // console.log(obj2); // {a:1,b:{bb:{bbb:2}},c:3}
 // obj1 === obj2 // false
 var clone = function (input) {};
+module.exports = { factorial, sum, arraySum, clone,compareStr, countKeysInObj, capitalizeFirst,sumBelow };
