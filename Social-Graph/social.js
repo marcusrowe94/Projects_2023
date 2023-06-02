@@ -34,59 +34,36 @@ class SocialNetwork {
   getFollowers(userID) {
     const follwers = new Set();
     for (const currentUsers in this.follows) {
-      if (+currentUsers === userID) continue;
       if (this.follows[currentUsers].has(userID)) {
-        follwers.add(+currentUsers);
+        follwers.add(Number(currentUsers));
       }
     }
     return follwers;
   }
 
-  getRecommendedFollows(userID, degrees, unique = new Set(), recommended = []) {
-   let following = this.follows[userID];
-   unique.add(userID)
-
-for (const usersFollowing of following) {
- for (const twoDeep of this.follows[usersFollowing]){
-  if(!unique.has(twoDeep)){
-    unique.add(twoDeep)
-    recommended.push(twoDeep)
+  getRecommendedFollows(
+    userID,
+    degrees,
+    visited = new Set(),
+    recommended = []
+  ) {
+    const queue = [[userID]];
+    visited.add(String([userID]));
+    while (queue.length) {
+      const currentPath = queue.shift();
+      const currentNode = currentPath.at(-1);
+      if (currentPath.length > degrees + 2) return recommended;
+      if (currentPath.length > 2) recommended.push(currentNode);
+      const neighbors = this.getFollows(currentNode);
+      for (const neighbor of neighbors) {
+        if (!visited.has(String(neighbor))) {
+          visited.add(String(neighbor))
+          queue.push([...currentPath, neighbor]);
+        }
+      }
+    }
+    return recommended;
   }
- }
 }
-if(degrees > 1){
-for(const usersFollowing of following){
-  this.getRecommendedFollows(usersFollowing, degrees - 1, unique, recommended)
-}
-}
-return recommended
-}
-// const queue = [[userID]]
-// const visited = new Set()
-// const friends = []
-// // console.log(queue)
-// while(queue.length){
-//   let currentPath = queue.shift()
-//   let currentNode = currentPath[currentPath - 1]
-//   if(!visited.has(currentNode)){
-//     visited.add(currentNode)
-//     console.log(currentPath.length)
-//     if(currentPath.length > 1 && currentPath.length <= degrees + 1){
-//       friends.push(currentNode)
-//       console.log(friends)
-
-//     }
-
-// }
-// }
-// }
-// }
-
-
-//     }
-//   }
-// }
-}
-
 
 module.exports = SocialNetwork;
