@@ -36,11 +36,10 @@ function countIslands(matrix, visited = new Set(), count = 0) {
           node = stack.pop();
           let [row, col] = node
           const neighborHood = getNeighbors(row, col, matrix);
-          for(const [neighborRow , neighborCol] of neighborHood) {
-            const valueOfCoordsInNeighborhood = matrix[neighborRow][neighborCol]
-            if(valueOfCoordsInNeighborhood === 1 && !visited.has(String([neighborRow , neighborCol]))){
-              visited.add(String([neighborRow , neighborCol]))
-              stack.push([neighborRow , neighborCol])
+          for(const neighbor of neighborHood) {
+            if(!visited.has(String(neighbor))){
+              visited.add(String(neighbor))
+              stack.push(neighbor)
             }
           }
         }

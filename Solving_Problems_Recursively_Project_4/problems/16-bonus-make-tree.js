@@ -66,9 +66,21 @@ The call above should return the tree below:
 ***********************************************************************/
 
 const makeTree = (categories, parent) => {
-  // Your code here
-};
+    const tree = [];
 
+    for (const category of categories) {
+      if (category.parent === parent) {
+        const updatedCategory = {
+        }
+        //   ...category,
+        //   children: makeTree(categories, category.id)
+        // };
+        tree.push(updatedCategory);
+      }
+    }
+
+    return tree;
+  };
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = makeTree;
 

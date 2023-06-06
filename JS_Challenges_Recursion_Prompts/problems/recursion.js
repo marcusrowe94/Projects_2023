@@ -1,4 +1,3 @@
-/* jshint esversion: 6 */
 
 // Solve the following prompts using recursion.
 
@@ -10,7 +9,7 @@ const factorial = function (n) {
   if (n === 0) return 1;
   return n * factorial(n - 1);
 };
-// console.log(factorial(5)); // 120)
+console.log(factorial(5)); // 120)
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 const sum = function (array) {
@@ -176,7 +175,7 @@ const reverseArr = function (array) {
   if (array.length <= 1) return array;
   return reverseArr(array.slice(1)).concat(array[0]);
 };
-console.log(reverseArr([1, 2, 3, 4, 5]));
+// console.log(reverseArr([1, 2, 3, 4, 5]));
 
 // const arr = [];
 //     while(array.length){
@@ -313,4 +312,4 @@ var mergeSort = function (array) {};
 // console.log(obj2); // {a:1,b:{bb:{bbb:2}},c:3}
 // obj1 === obj2 // false
 var clone = function (input) {};
-module.exports = { factorial, sum, arraySum, clone,compareStr, countKeysInObj, capitalizeFirst,sumBelow };
+module.exports = [factorial, sum, arraySum, clone,compareStr, countKeysInObj, capitalizeFirst,sumBelow ];

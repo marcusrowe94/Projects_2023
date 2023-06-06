@@ -36,8 +36,8 @@ nums.splice(minIndex, 1)
 
 
 }
-console.log(sort([4,1,6,3,1,7]));
-console.log(sort([0, 1, -3])); // [-3, 0, 1]
+// console.log(sort([4,1,6,3,1,7]));
+// console.log(sort([0, 1, -3])); // [-3, 0, 1]
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

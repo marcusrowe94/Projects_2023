@@ -28,10 +28,10 @@ array.push(last)
 return array
 }))
 }
-console.log(subsets([])) // [[]]
-console.log(subsets([1])) // [[], [1]]
-console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
-console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]console.log(
+// console.log(subsets([])) // [[]]
+// console.log(subsets([1])) // [[], [1]]
+// console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
+// console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]console.log(
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

@@ -45,10 +45,10 @@ function deepDup(arr) {
   }
   return duped;
 }
-console.log(duped = deepDup(arr)); // [[1], [2, [3]]]
-console.log(arr[0] === duped[0]) // false
-console.log(arr[1] === duped[1]) // false
-console.log(arr[1][1] === duped[1][1]) // false}
+// console.log(duped = deepDup(arr)); // [[1], [2, [3]]]
+// console.log(arr[0] === duped[0]) // false
+// console.log(arr[1] === duped[1]) // false
+// console.log(arr[1][1] === duped[1][1]) // false}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

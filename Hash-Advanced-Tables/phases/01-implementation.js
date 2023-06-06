@@ -58,31 +58,31 @@ class HashTable { // get O(1), set O(1), deleteKey O(1)
 
   }
 
-read(key) {
-  this.length++
-let index = this.hashMod(key)
+// read(key) {
+//   this.length++
+// let index = this.hashMod(key)
 
-let current = this.data[index]
-if(!current){
-  return undefined
-}
+// let current = this.data[index]
+// if(!current){
+//   return undefined
+// }
 
-while(current){
-if(current.key === key){
-   current.key = key
-  current = current.next
-}
+// while(current){
+// if(current.key === key){
+//    current.key = key
+//   current = current.next
+// }
 
-}
+// }
 
-}
-
-
+// }
 
 
-  resize() {
-    // Your code here
-  }
+
+
+//   resize() {
+//     // Your code here
+//   }
 
 
   delete(key) {

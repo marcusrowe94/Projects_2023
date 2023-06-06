@@ -59,7 +59,7 @@ function findNeighbors(node, matrix) {
     [row + 1, col + 1],
   ];
 let res = []
-  for(const neigbor of neigbors ){ 
+  for(const neigbor of neigbors ){
     const [row, col] = neigbor
     if(matrix[row] && matrix[row][col]){
       const currentValue = matrix[row][col]
@@ -94,7 +94,7 @@ function pathTraversal(node, matrix, visited = new Set(), peak) {
     for (const neighbor of neighbors) {
       if (!visited.has(String(neighbor))) {
         visited.add(String(neighbor));
-        stack.push([...currentPath, neighbor])
+        stack.push([neighbor])
       }
     }
   }

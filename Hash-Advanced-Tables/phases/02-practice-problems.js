@@ -31,22 +31,27 @@ function duplicate(arr) {
 }
 
 function twoSum(nums, target) {
- const map = {}
+  const map = {};
   // const numbers = new Set(nums);
   for (let i = 0; i < nums.length; i++) {
-    const comp = target - nums[i]
-    const value = nums[i]
-    if(map[comp] !== undefined){
-
-   return true
+    const comp = target - nums[i];
+    const value = nums[i];
+    if (map[comp] !== undefined) {
+      return true;
     }
-    map[value] = i
+    map[value] = i;
   }
-  return false 
+  return false;
 }
 
-function wordPattern(pattern, strings) {
-  // Your code here
+function wordPattern(pattern, strings, visited = new Set()) {
+  visited.add(strings)
+  let arr = pattern.split("");
+  for (const letter of arr) {
+    if (letter === "A") letter = "dog";
+    else letter = "cat";
+
+  }
 }
 
 module.exports = [anagrams, commonElements, duplicate, twoSum, wordPattern];
