@@ -1,0 +1,127 @@
+.homepage #catAbb,
+.homepage #go,
+.homepage .leftlinks #cl_app_beta,
+.no-js,
+p.more {
+  display: none;
+}
+
+#logo {
+  font-size: 2.5rem;
+}
+
+.homepage-search .querybox {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid #464646;
+  font-size: 16px;
+}
+
+.menu.collapsible > li {
+  cursor: pointer;
+}
+
+.menu.collapsible > li.expand.s ul {
+  display: block;
+}
+
+
+.menu.collapsible > li ul {
+  display: none;
+}
+* {
+  background-color: #F5F5F5 ;
+  font-family: Helvetica, sans-serif;
+  color: #464646;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding:0px;
+}
+ul li{
+  list-style: none;
+}
+a:hover{
+  color: #800080;
+  font-weight: bold;
+}
+a > span:hover{
+  color: #800080;
+  font-weight: bold;
+}
+.page-container{
+  max-width: 1200px;
+}
+#leftbar, #center, #rightbar{
+   float: left;
+   padding-top:  0px;
+   padding-bottom:  0px;
+   padding-left:  30px;
+   padding-right: 30px;
+   box-sizing: border-box;
+
+}
+footer{
+  clear:both
+}
+#leftbar, #rightbar{
+  width: 25%;
+}
+#center{
+width: 50%;
+border: solid 1px #464646;
+border-radius: 10px;
+
+}
+ #center > div{
+  float: left;
+  width: 33%;
+}
+
+#topban h2{
+text-align: center;
+}
+ul+.clfooter{
+text-align: center;
+border-top: solid 1px gray;
+padding-top:10px ;
+padding-bottom: 10px ;
+padding-left: 0px ;
+padding-right:0px ;
+
+}
+.clfooter>li{
+  display: inline;
+  padding-right: 5px;
+}
+/* Use an ID selector to select the element with the ID "center" and:
+
+Give it a width of 50%
+Give it a solid one pixel border in the color #464646
+Give it a border radius of ten pixels using the border-radius property
+Use a child combinator selector to style all DIVs that are direct children of the element with the "center" ID:
+
+Float them to the left
+Give each of them a width of 33%
+Use a descendant combinator selector to style the H2 that is a descendant of the element with the "topban" ID:
+
+Align the text of the H2 to the center */
+/* Phase 4: Style the footer list
+Use a tag+class selector to style the UL element with the class name "clfooter" and:
+
+Align the text of the UL to the center
+Give it a top border only that is one pixel solid gray
+Give it top/bottom padding of ten pixels and left/right padding of zero pixels
+Use a child combinator selector to style all LI elements that are direct children of the UL with the class name "clfooter" and:
+
+Display all LIs as inline elements using the display property
+Give all LIs in the ul.clfooter 5px padding on the right side
+Phase 5: Add pseudo-elements
+The Craigslist logo is a purple peace sign, which also happens to be a common emoji these days. What else screams 2010s and beyond better than emojis? So, let's add some to the Craigslist homepage!
+
+Peace Symbol Emoji: */
+/* Your code here */
