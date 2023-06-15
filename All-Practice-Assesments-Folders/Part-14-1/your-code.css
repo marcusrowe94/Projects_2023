@@ -1,0 +1,41 @@
+/* Your code here */
+body{
+    background-color: #EFEFEF ;
+}
+fieldset{
+    background-color: white;
+}
+.orange-box{
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    bottom:40px;
+
+
+
+}
+.blue-box{
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    bottom:-40px;
+
+}
+ .outer-layer-3 > p + p {
+    color: orange
+}
+.outer-layer-4{
+  box-shadow: 0 0 4px 0 rgba(0, 0, 255, 0.6);
+
+
+}
+.outer-layer-5{
+    overflow: auto;
+}
+.bold.uppercase{
+    font-family:'Courier New'
+}
