@@ -1,0 +1,8 @@
+
+
+@media screen and (width <= 600px) {
+    .tree{
+        display: inline-block;
+        width: 600px;
+    }
+}

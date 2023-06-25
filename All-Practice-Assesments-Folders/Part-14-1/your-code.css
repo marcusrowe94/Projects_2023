@@ -11,7 +11,7 @@ fieldset{
     height: 40px;
     box-sizing: border-box;
     position: relative;
-    bottom:40px;
+    bottom:40epx;
 
 
 
@@ -26,7 +26,7 @@ fieldset{
 
 }
  .outer-layer-3 > p + p {
-    color: orange
+    color: red
 }
 .outer-layer-4{
   box-shadow: 0 0 4px 0 rgba(0, 0, 255, 0.6);
