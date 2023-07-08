@@ -42,7 +42,7 @@ a {
 ul {
   padding:0px;
 }
-ul li{
+ul > li{
   list-style: none;
 }
 a:hover{
@@ -53,8 +53,12 @@ a > span:hover{
   color: #800080;
   font-weight: bold;
 }
+@media screen and (width <= 1200px){
+
+}
 .page-container{
-  max-width: 1200px;
+  width: 1200px;
+
 }
 #leftbar, #center, #rightbar{
    float: left;
@@ -94,10 +98,25 @@ padding-left: 0px ;
 padding-right:0px ;
 
 }
-.clfooter>li{
+ul.clfooter > li{
   display: inline;
   padding-right: 5px;
 }
+h4.ban::before{
+  content: "☮️"
+}
+td{
+  border: solid 1px #333;
+  text-align: center;
+}
+.cal{
+border-collapse: collapse;
+}
+link{
+  color: bold, green;
+}
+
+
 /* Use an ID selector to select the element with the ID "center" and:
 
 Give it a width of 50%
