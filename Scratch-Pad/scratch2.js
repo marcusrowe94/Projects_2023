@@ -4,356 +4,356 @@
 // when the condition is met we will return the index of where it was found an
 // if we have checked all elements in the array and the target is not found return -1
 
-function printBreadthFirst(start) {
-    const queue = [start]
-    const seen = new Set(queue)
-    while(queue.length){
-    let node = queue.shift()
-    console.log(node)
-        adjList[node].forEach((node)=>{
-            if(!seen.has(node)){
-               seen.add(node)
-              queue.push(node)
-            }
+// function printBreadthFirst(start) {
+//     const queue = [start]
+//     const seen = new Set(queue)
+//     while(queue.length){
+//     let node = queue.shift()
+//     console.log(node)
+//         adjList[node].forEach((node)=>{
+//             if(!seen.has(node)){
+//                seen.add(node)
+//               queue.push(node)
+//             }
 
-        })
+//         })
 
-      }
+//       }
 
-  }
-console.log("First Test:")
-printBreadthFirst(3); // Prints 1 through 6 in Breadth-first order, starting with 3
-                      // One possible solution:  3, 2, 4, 1, 5, 6
-console.log("Second Test:")
-printBreadthFirst(6); // Prints 1 through 6 in Breadth-first order, starting with 6
-                      // One possible solution:  6, 4, 3, 5, 2, 1
-console.log("Third Test:")
-printBreadthFirst(4); // Prints 1 through 6 in Breadth-first order, starting with 4
-                      // One possible solution:  4, 3, 5, 6, 2, 1
-let adjList = {
-1: [2, 5],
-  2: [1, 3, 5],
-  3: [2, 4],
-  4: [3, 5, 6],
-  5: [1, 2, 4],
-  6: [4]
-}
-function printDepthFirst(start) {
-    const stack = [start]
-    const seen = new Set(stack)
-    while(stack.length > 0){
-   let node = stack.pop()
-   console.log(node)
-    for(const neighbor of adjList[node]){
-      if(!seen.has(neighbor)){
-        seen.add(neighbor)
-        stack.push(neighbor)
-      }
+//   }
+// console.log("First Test:")
+// printBreadthFirst(3); // Prints 1 through 6 in Breadth-first order, starting with 3
+//                       // One possible solution:  3, 2, 4, 1, 5, 6
+// console.log("Second Test:")
+// printBreadthFirst(6); // Prints 1 through 6 in Breadth-first order, starting with 6
+//                       // One possible solution:  6, 4, 3, 5, 2, 1
+// console.log("Third Test:")
+// printBreadthFirst(4); // Prints 1 through 6 in Breadth-first order, starting with 4
+//                       // One possible solution:  4, 3, 5, 6, 2, 1
+// let adjList = {
+// 1: [2, 5],
+//   2: [1, 3, 5],
+//   3: [2, 4],
+//   4: [3, 5, 6],
+//   5: [1, 2, 4],
+//   6: [4]
+// }
+// function printDepthFirst(start) {
+//     const stack = [start]
+//     const seen = new Set(stack)
+//     while(stack.length > 0){
+//    let node = stack.pop()
+//    console.log(node)
+//     for(const neighbor of adjList[node]){
+//       if(!seen.has(neighbor)){
+//         seen.add(neighbor)
+//         stack.push(neighbor)
+//       }
 
-    }
+//     }
 
-  }
+//   }
 
-}
-console.log("First Test:")
-printDepthFirst(3); // Prints 1 through 6 in Depth-first order, starting with 3
-                    // One possible solution:  3, 4, 6, 5, 1, 2
-console.log("Second Test:")
-printDepthFirst(6); // Prints 1 through 6 in Depth-first order, starting with 6
-                    // One possible solution:  6, 4, 5, 2, 1, 3
-console.log("Third Test:")
-printDepthFirst(4); // Prints 1 through 6 in Depth-first order, starting with 4
-                    // One possible solution:  4, 6, 5, 2, 1, 3
-function breadthFirstSearch(start, end) {
+// }
+// console.log("First Test:")
+// printDepthFirst(3); // Prints 1 through 6 in Depth-first order, starting with 3
+//                     // One possible solution:  3, 4, 6, 5, 1, 2
+// console.log("Second Test:")
+// printDepthFirst(6); // Prints 1 through 6 in Depth-first order, starting with 6
+//                     // One possible solution:  6, 4, 5, 2, 1, 3
+// console.log("Third Test:")
+// printDepthFirst(4); // Prints 1 through 6 in Depth-first order, starting with 4
+//                     // One possible solution:  4, 6, 5, 2, 1, 3
+// function breadthFirstSearch(start, end) {
 
-  let adjList = {
-    1: [2, 5],
-    2: [1, 3, 5],
-    3: [2, 4],
-    4: [3, 5],
-    5: [1, 2, 4],
-    6: []
-}
+//   let adjList = {
+//     1: [2, 5],
+//     2: [1, 3, 5],
+//     3: [2, 4],
+//     4: [3, 5],
+//     5: [1, 2, 4],
+//     6: []
+// }
 
-function breadthFirstSearch(start, end) {
-    const queue = [start]
-    const seen = new Set(queue)
-    while(queue.length > 0){
-      let node = queue.shift()
-      // console.log(node)
-      for(const neighbor of adjList[node]){
-        if(!seen.has(neighbor)){
-          seen.add(neighbor)
-          queue.push(neighbor)
+// function breadthFirstSearch(start, end) {
+//     const queue = [start]
+//     const seen = new Set(queue)
+//     while(queue.length > 0){
+//       let node = queue.shift()
+//       // console.log(node)
+//       for(const neighbor of adjList[node]){
+//         if(!seen.has(neighbor)){
+//           seen.add(neighbor)
+//           queue.push(neighbor)
 
-    // need to add to the end of the queue
-        }
-        if(seen.has(end)){
-          return true
-      }
-    }
-}
-  return false
-}
+//     // need to add to the end of the queue
+//         }
+//         if(seen.has(end)){
+//           return true
+//       }
+//     }
+// }
+//   return false
+// }
 
-let adjList2 = {
-    1: [2, 5],
-    2: [1, 3, 5],
-    3: [2, 4],
-    4: [3, 5],
-    5: [1, 2, 4],
-    6: []
-}
+// let adjList2 = {
+//     1: [2, 5],
+//     2: [1, 3, 5],
+//     3: [2, 4],
+//     4: [3, 5],
+//     5: [1, 2, 4],
+//     6: []
+// }
 
-function aShortestPath(start, target) {
-    // I changed end to target
-    const queue = [[start]]
-    const seen = new Set(queue)
-    while(queue.length){
-     let currentPath = queue.shift()
-     let currentNode = currentPath[currentPath.length -1]
-     if(currentNode === target){
-         return currentPath
-       }
-     for(const neighbor of adjList[currentNode]){
-       if(!seen.has(neighbor)){
-          seen.add(neighbor)
-             queue.push([...currentPath, neighbor])
-       }
+// function aShortestPath(start, target) {
+//     // I changed end to target
+//     const queue = [[start]]
+//     const seen = new Set(queue)
+//     while(queue.length){
+//      let currentPath = queue.shift()
+//      let currentNode = currentPath[currentPath.length -1]
+//      if(currentNode === target){
+//          return currentPath
+//        }
+//      for(const neighbor of adjList[currentNode]){
+//        if(!seen.has(neighbor)){
+//           seen.add(neighbor)
+//              queue.push([...currentPath, neighbor])
+//        }
 
-      }
+//       }
 
-    }
-    return false
+//     }
+//     return false
 
-  }
+//   }
 
-}
+// }
 
-console.log("First Test:");
-console.log(aShortestPath(1, 3)); // -> [ 1, 2, 3 ] (One possible solution)
-console.log("Second Test:");
-console.log(aShortestPath(4, 1)); // -> [ 4, 5, 1 ] (One possible solution)
-console.log("Third Test:");
-console.log(aShortestPath(6, 1)); // -> false
+// console.log("First Test:");
+// console.log(aShortestPath(1, 3)); // -> [ 1, 2, 3 ] (One possible solution)
+// console.log("Second Test:");
+// console.log(aShortestPath(4, 1)); // -> [ 4, 5, 1 ] (One possible solution)
+// console.log("Third Test:");
+// console.log(aShortestPath(6, 1)); // -> false
 
-function aLongestPath(start, target) {
-  const queue = [[start]]
-  const seen = new Set(queue)
-  while(queue.length){
-    let currentPath = queue.shift()
-    let currentNode = currentPath[currentPath.length -1]
-    if(currentNode === target){
-      return currentPath
-    }
-    for(const neighbor of adjList[currentNode]){
-      if(!seen.has(neighbor)){
-        seen.add(neighbor)
-        queue.push([...currentPath, neighbor])
-      }
-    }
-    // sort queue by path length in descending order
-    queue.sort((a, b) => b.length - a.length)
-  }
-  return false
-}
+// function aLongestPath(start, target) {
+//   const queue = [[start]]
+//   const seen = new Set(queue)
+//   while(queue.length){
+//     let currentPath = queue.shift()
+//     let currentNode = currentPath[currentPath.length -1]
+//     if(currentNode === target){
+//       return currentPath
+//     }
+//     for(const neighbor of adjList[currentNode]){
+//       if(!seen.has(neighbor)){
+//         seen.add(neighbor)
+//         queue.push([...currentPath, neighbor])
+//       }
+//     }
+//     // sort queue by path length in descending order
+//     queue.sort((a, b) => b.length - a.length)
+//   }
+//   return false
+// }
 
-let adjList1 = {
-  1: [2, 5],
-  2: [1, 3, 5],
-  3: [2, 4],
-  4: [3, 5],
-  5: [1, 2, 4],
-  6: [],
-};
-function degreesOfSeparation(start, end) {
-  // Initialize a set to keep track of seen nodes and a queue to keep track of nodes to visit
-  const seen = new Set();
-  const queue = [[start]];
+// let adjList1 = {
+//   1: [2, 5],
+//   2: [1, 3, 5],
+//   3: [2, 4],
+//   4: [3, 5],
+//   5: [1, 2, 4],
+//   6: [],
+// };
+// function degreesOfSeparation(start, end) {
+//   // Initialize a set to keep track of seen nodes and a queue to keep track of nodes to visit
+//   const seen = new Set();
+//   const queue = [[start]];
 
-  // Loop through the queue until it's empty
-  while (queue.length > 0) {
-    // Dequeue the first element of the queue and assign it to `currentPath`
-    const currentPath = queue.shift();
+//   // Loop through the queue until it's empty
+//   while (queue.length > 0) {
+//     // Dequeue the first element of the queue and assign it to `currentPath`
+//     const currentPath = queue.shift();
 
-    // Get the last node of `currentPath`
-    const currentNode = currentPath[currentPath.length - 1];
+//     // Get the last node of `currentPath`
+//     const currentNode = currentPath[currentPath.length - 1];
 
-      if (currentNode === end) return currentPath.length - 1
+//       if (currentNode === end) return currentPath.length - 1
 
-      // Add all unseen neighbors of `currentNode` to the queue
-      for (const neighbor of adjList[currentNode]) {
-        if (!seen.has(neighbor)) {
-          seen.add(neighbor);
+//       // Add all unseen neighbors of `currentNode` to the queue
+//       for (const neighbor of adjList[currentNode]) {
+//         if (!seen.has(neighbor)) {
+//           seen.add(neighbor);
 
-          queue.push([...currentPath, neighbor]);
-        }
-      }
-    }
-return false
+//           queue.push([...currentPath, neighbor]);
+//         }
+//       }
+//     }
+// return false
 
-}
-
-
-console.log("First Test:");
-console.log(degreesOfSeparation(1, 3)); // -> 2
-console.log("Second Test:");
-console.log(degreesOfSeparation(5, 2)); // -> 1
-console.log("Third Test:");
-console.log(degreesOfSeparation(6, 1)); // -> false
+// }
 
 
+// console.log("First Test:");
+// console.log(degreesOfSeparation(1, 3)); // -> 2
+// console.log("Second Test:");
+// console.log(degreesOfSeparation(5, 2)); // -> 1
+// console.log("Third Test:");
+// console.log(degreesOfSeparation(6, 1)); // -> false
 
 
-function findNeighbors(node, matrix) {
-  let row = node[0];
-  let col = node[1];
-  const neigbors = [];
-  const currentLocation = matrix[row][col];
-  // Don't forget to include diagonal neighbors!!!
 
-  if (matrix[row - 1] && matrix[row - 1][col - 1])
-    neigbors.push([row - 1, col - 1]);
-  if (matrix[row - 1] && matrix[row - 1][col + 1])
-    neigbors.push([row - 1, col + 1]);
-  if (matrix[row - 1] && matrix[row - 1][col]) neigbors.push([row - 1, col]);
-  if (matrix[row][col - 1]) neigbors.push([row, col - 1]);
-  if (matrix[row][col + 1]) neigbors.push([row, col + 1]);
-  if (matrix[row + 1] && matrix[row + 1][col]) neigbors.push([row + 1, col]);
-  if (matrix[row + 1] && matrix[row + 1][col - 1])
-    neigbors.push([row + 1, col - 1]);
-  if (matrix[row + 1] && matrix[row + 1][col + 1])
-    neigbors.push([row + 1, col + 1]);
 
-  return neigbors.filter((neigbor) => {
-    const [row, col] = neigbor;
-    const nextVal = matrix[row][col];
-    return (
-      currentLocation === nextVal - 1 || currentLocation === nextVal ||currentLocation === nextVal + 1
-    );
-  });
-}
+// function findNeighbors(node, matrix) {
+//   let row = node[0];
+//   let col = node[1];
+//   const neigbors = [];
+//   const currentLocation = matrix[row][col];
+//   // Don't forget to include diagonal neighbors!!!
 
-function pathTraversal(node, matrix, visited = new Set(), peak) {
-  // matrix[node[0]] [node[1]]
-  // console.log(matrix, "THIS IS THE MATRIX");
+//   if (matrix[row - 1] && matrix[row - 1][col - 1])
+//     neigbors.push([row - 1, col - 1]);
+//   if (matrix[row - 1] && matrix[row - 1][col + 1])
+//     neigbors.push([row - 1, col + 1]);
+//   if (matrix[row - 1] && matrix[row - 1][col]) neigbors.push([row - 1, col]);
+//   if (matrix[row][col - 1]) neigbors.push([row, col - 1]);
+//   if (matrix[row][col + 1]) neigbors.push([row, col + 1]);
+//   if (matrix[row + 1] && matrix[row + 1][col]) neigbors.push([row + 1, col]);
+//   if (matrix[row + 1] && matrix[row + 1][col - 1])
+//     neigbors.push([row + 1, col - 1]);
+//   if (matrix[row + 1] && matrix[row + 1][col + 1])
+//     neigbors.push([row + 1, col + 1]);
 
-  const queue = [[node]];
-  while (queue.length > 0) {
-    const currentPath = queue.shift();
-    // console.log(currentPath, "THIS IS MY CURRENTPATH!!!!!!")
-    // console.log(queue, "THIS IS THE QUEUE")
-    const currentNode = currentPath[currentPath.length - 1]
-     const value = matrix[currentNode[0]][currentNode[1]];
-      // console.log(value, "THIS IS VALUE FROM THE NODE");
-      if (value === peak) return true;
-      // console.log(matrix)
+//   return neigbors.filter((neigbor) => {
+//     const [row, col] = neigbor;
+//     const nextVal = matrix[row][col];
+//     return (
+//       currentLocation === nextVal - 1 || currentLocation === nextVal ||currentLocation === nextVal + 1
+//     );
+//   });
+// }
 
-      const neighbors = findNeighbors(currentNode, matrix)
-      for (const neighbor of neighbors) {
-        if (!visited.has(`${neighbor}`)) {
-          visited.add(`${neighbor}`);
-          queue.push([...currentPath,neighbor]);
-          // if(matrix[neighbor[0]][neighbor[1]] === peak) return true
-          // console.log(matrix[neighbor[0]][neighbor[1]])
-          // console.log(neighbor, "NEIGHBOR?");
+// function pathTraversal(node, matrix, visited = new Set(), peak) {
+//   // matrix[node[0]] [node[1]]
+//   // console.log(matrix, "THIS IS THE MATRIX");
 
-        }
+//   const queue = [[node]];
+//   while (queue.length > 0) {
+//     const currentPath = queue.shift();
+//     // console.log(currentPath, "THIS IS MY CURRENTPATH!!!!!!")
+//     // console.log(queue, "THIS IS THE QUEUE")
+//     const currentNode = currentPath[currentPath.length - 1]
+//      const value = matrix[currentNode[0]][currentNode[1]];
+//       // console.log(value, "THIS IS VALUE FROM THE NODE");
+//       if (value === peak) return true;
+//       // console.log(matrix)
 
-    }
-  }
+//       const neighbors = findNeighbors(currentNode, matrix)
+//       for (const neighbor of neighbors) {
+//         if (!visited.has(`${neighbor}`)) {
+//           visited.add(`${neighbor}`);
+//           queue.push([...currentPath,neighbor]);
+//           // if(matrix[neighbor[0]][neighbor[1]] === peak) return true
+//           // console.log(matrix[neighbor[0]][neighbor[1]])
+//           // console.log(neighbor, "NEIGHBOR?");
 
-  return false;
-}
+//         }
 
-function identifyPath(mountain) {
-  // Find the peak
-  const peak = findPeak(mountain)
-  // Find the start
-  const starts = findStarts(mountain)
-  // Traverse from the starts and try to get to the top
-  for(const reachingPeak of starts){
-  // console.log(mountain, "****************")
-  // console.log(reachingPeak, "****************")
-   const traverse = pathTraversal(reachingPeak, mountain, new Set(), peak)
-   if(traverse) return reachingPeak
+//     }
+//   }
 
-  // Your code here
-}
-return false
-}
-function getNeighbors(row, col, matrix) {
-  const neighbors = [
-    [row, col + 1],
-    [row, col - 1],
-    [row + 1, col + 1],
-    [row + 1, col - 1],
-    [row - 1, col - 1],
-    [row - 1, col + 1],
-    [row + 1, col],
-    [row - 1, col],
-  ];
-  return neighbors.filter((neighbor)=>{
-    const [r, c] = neighbor
-    return matrix[r] && matrix[r][c]
-    })
+//   return false;
+// }
 
-}
-function countIslands(matrix) {
-  // Create a visited set to store visited nodes
-  const visited = new Set();
+// function identifyPath(mountain) {
+//   // Find the peak
+//   const peak = findPeak(mountain)
+//   // Find the start
+//   const starts = findStarts(mountain)
+//   // Traverse from the starts and try to get to the top
+//   for(const reachingPeak of starts){
+//   // console.log(mountain, "****************")
+//   // console.log(reachingPeak, "****************")
+//    const traverse = pathTraversal(reachingPeak, mountain, new Set(), peak)
+//    if(traverse) return reachingPeak
 
-  // Initialize count to 0
-  let count = 0;
+//   // Your code here
+// }
+// return false
+// }
+// function getNeighbors(row, col, matrix) {
+//   const neighbors = [
+//     [row, col + 1],
+//     [row, col - 1],
+//     [row + 1, col + 1],
+//     [row + 1, col - 1],
+//     [row - 1, col - 1],
+//     [row - 1, col + 1],
+//     [row + 1, col],
+//     [row - 1, col],
+//   ];
+//   return neighbors.filter((neighbor)=>{
+//     const [r, c] = neighbor
+//     return matrix[r] && matrix[r][c]
+//     })
 
-  // Iterate through all indices in matrix
-  for (let row = 0; row < matrix.length; row++) {
-    for (let col = 0; col < matrix[row].length; col++) {
-      // If an index contains a 1 and has not been visited,
-      // If cell is unvisited and contains a 1
-      if (matrix[row][col] === 1 && !visited.has(String([row, col]))) {
-        // Increment count and mark cell as visited
-        // DO THE THING (increment island count by 1)
-        // increment island count and start traversing neighbors
-        // console.log(matrix[row][col], '++++++++++++++++++++++++')
-        count++;
-        // Add stringified version of current index to the visited set
-        visited.add(String([row, col]));
+// }
+// function countIslands(matrix) {
+//   // Create a visited set to store visited nodes
+//   const visited = new Set();
 
-        // Create stack to perform iterative search on neighbors
-        const stack = [[row, col]];
+//   // Initialize count to 0
+//   let count = 0;
 
-        // While stack contains elements
-        while (stack.length > 0) {
-          // Initialize a stack with current index
-          // Pop element from stack
-          let [row, col] = stack.pop();
-          const neighbors = getNeighbors(row, col, matrix);
+//   // Iterate through all indices in matrix
+//   for (let row = 0; row < matrix.length; row++) {
+//     for (let col = 0; col < matrix[row].length; col++) {
+//       // If an index contains a 1 and has not been visited,
+//       // If cell is unvisited and contains a 1
+//       if (matrix[row][col] === 1 && !visited.has(String([row, col]))) {
+//         // Increment count and mark cell as visited
+//         // DO THE THING (increment island count by 1)
+//         // increment island count and start traversing neighbors
+//         // console.log(matrix[row][col], '++++++++++++++++++++++++')
+//         count++;
+//         // Add stringified version of current index to the visited set
+//         visited.add(String([row, col]));
 
-          // Perform iterative search on neighbors
-          // Iterate over neigbors
-          for (const [neighborRow, neighborCol] of neighbors) {
-            // If neighbor has not been visited
-            if (
-              matrix[neighborRow][neighborCol] === 1 &&
-              !visited.has(String([neighborRow, neighborCol]))
-            ) {
-              // Mark neighbor as visited
-              // Get valid neighbors of current element
-              visited.add(String([neighborRow, neighborCol]));
-              // Add neighbor to stack
-              stack.push([neighborRow, neighborCol]);
-            }
-          }
-        }
-      }
-    }
-  }
+//         // Create stack to perform iterative search on neighbors
+//         const stack = [[row, col]];
 
-  // Return count of islands
-  // Return island count
-  return count;
-}
+//         // While stack contains elements
+//         while (stack.length > 0) {
+//           // Initialize a stack with current index
+//           // Pop element from stack
+//           let [row, col] = stack.pop();
+//           const neighbors = getNeighbors(row, col, matrix);
+
+//           // Perform iterative search on neighbors
+//           // Iterate over neigbors
+//           for (const [neighborRow, neighborCol] of neighbors) {
+//             // If neighbor has not been visited
+//             if (
+//               matrix[neighborRow][neighborCol] === 1 &&
+//               !visited.has(String([neighborRow, neighborCol]))
+//             ) {
+//               // Mark neighbor as visited
+//               // Get valid neighbors of current element
+//               visited.add(String([neighborRow, neighborCol]));
+//               // Add neighbor to stack
+//               stack.push([neighborRow, neighborCol]);
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   // Return count of islands
+//   // Return island count
+//   return count;
+// }
 
 // Your code here
 
@@ -375,3 +375,77 @@ function countIslands(matrix) {
 
 // console.log(countIslands(matrix)) // 2
 // console.log(countIslands(matrix2)); // 3
+// const a = [1, 2, 3, 4, 5];
+// console.log("THIS IS THE VALUE***",a)
+// // console.log(a[0]);
+
+// const s = JSON.stringify(a);
+// console.log("THIS IS THE VALUE***",s)
+// // console.log(s[0]);
+
+// const v = JSON.parse(s);
+// console.log("THIS IS THE VALUE***", v)
+// console.log(v[0]);
+// # Assessment Prep
+
+// ## [Traditional HTML Web Server - HTTP Basics in JSON](https://open.appacademy.io/learn/js-py---pt-mar-2023-online/week-16---apis-and-promises/http-basics-in-json--review-)
+
+// ---
+
+// ## [JSON Web API Server - Music Docs in JSON](https://open.appacademy.io/learn/js-py---pt-mar-2023-online/week-16---apis-and-promises/music-archive-docs-in-json)
+
+// ---
+
+// ## [Fetch & Promises - Test API endpoints](https://open.appacademy.io/learn/js-py---pt-mar-2023-online/week-16---apis-and-promises/practice--test-api-endpoints)
+// # Exercise: Create API documentation
+
+// ## Get all the posts
+
+// - `GET /posts`
+
+// ## Create a new post
+
+// - `POST /posts`
+
+// ## Edit a post
+
+// - `PUT /posts/:postId`
+// - `PATCH /posts/:postId`
+
+// ## Create a new user
+
+// - `POST /users`
+
+// ## Get the comments for a post
+
+// - `GET /posts/:postId/comments`
+
+// ## Create a comment for a post
+
+// - `POST /posts/:postId/comments`
+
+// ## Edit a comment for a post
+
+// - `PUT /comments/:commentId`
+// - `PATCH /comments/:commentId`
+
+// ## Delete a comment for a post
+
+// - `DELETE /comments/:commentId`
+
+// ## Add a like for a post
+
+// - `POST /posts/:postId/like`
+
+// ## Remove a like for a post
+
+// - `DELETE /posts/:postId/like`
+
+// ## Get all the posts of a user
+
+// - `GET /users/:userId/posts`
+
+//  ## Submit a search on posts
+
+// - `GET /posts/search`
+// - `POST /posts/search`
