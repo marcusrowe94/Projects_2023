@@ -33,7 +33,7 @@ add.addEventListener("click", async () => {
         // Your code here
         const ul = document.body.querySelector("ul")
         ul.appendChild(li)
-      
+
 
     } catch (e) {
         console.log(e)
@@ -63,6 +63,12 @@ const removeLast = document.getElementById("remove-last");
 removeLast.addEventListener("click", () => {
     /*-------------------- Select the last dog card ----------------------- */
     // Your code here
+    const lastDog = document.body.querySelector("li:last-child")
+    if(lastDog){
+        lastDog.remove()
+    }else{
+        return
+    }
 
     /*-------------------- Remove the last dog card ----------------------- */
     // Your code here
