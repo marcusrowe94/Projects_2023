@@ -1,0 +1,14 @@
+{
+  "name": "window-objectmodel-debugger",
+  "version": "1.0.0",
+  "description": "In this practice, your tasks will be to use the `window` object to manipulate a basic portfolio page, find objects within the `document` by implementing some search functions, and `import`/`export` files with ES6 modules.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+
+}

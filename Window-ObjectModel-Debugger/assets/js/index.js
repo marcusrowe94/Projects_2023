@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   findingElements.findFirstElementOfTag()
   findingElements.findFirstElementOfClass()
   findingElements.findElementsOfTag()
-  findElementsOfClass.findElementsOfClass()
+  findingElements.findElementsOfClass()
   console.log(findElementById("header")); // <div id="header">
   console.log(findFirstElementOfTag("LI")); // <li><h3>Computer Science</h3>...</li>
   console.log(findFirstElementOfClass("section")); // <div class="section"><h2>About Me</h2>...</div>

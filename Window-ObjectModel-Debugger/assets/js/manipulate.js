@@ -1,19 +1,26 @@
 export function changeTitle() {
   // Change the title of the page to "(Your name)'s Portfolio"
-  const title = document.getElementById("h1");
+  const title = document.querySelector("title");
+  title.innerText = "Marcus Rowe's Portfolio";
   console.log(title);
-  return (title.innerText = "Marcus Rowe's Portfolio");
   // Your code here
-  debugger
 }
 
 export function changeHeader() {
   // Change the name in the h1 of the page to your name
   // Your code here
+  const h1 = document.body.querySelector("h1")
+  h1.innerText = "Marcus Rowe"
+  console.log(h1)
 }
 
 export function changeAboutMe() {
   /* Update the first paragraph in the About Me section with a small
      passage about yourself */
   // Your code here
+  const aboutme = document.querySelector("section")
+  const p = aboutme.querySelector("p")
+  console.log(p)
+
+  p.innerText = "hello"
 }
