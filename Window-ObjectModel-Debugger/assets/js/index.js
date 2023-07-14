@@ -1,5 +1,5 @@
-import { changeAboutMe, changeTitle, changeHeader } from "./manipulate";
-import { findElementById, findFirstElementOfTag, findFirstElementOfClass, findElementsOfClass, findElementsOfTag} from "./search";
+import { changeAboutMe, changeTitle, changeHeader } from "./manipulate.js";
+import { findElementById, findFirstElementOfTag, findFirstElementOfClass, findElementsOfClass, findElementsOfTag} from "./search.js";
 
 window.addEventListener("DOMContentLoaded",event =>{
 

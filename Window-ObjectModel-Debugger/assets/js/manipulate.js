@@ -18,9 +18,8 @@ export function changeAboutMe() {
   /* Update the first paragraph in the About Me section with a small
      passage about yourself */
   // Your code here
-  const aboutme = document.querySelector("section")
-  const p = aboutme.querySelector("p")
+  let aboutme = document.querySelector("section")
+  let p = aboutme.children.querySelector("p")
   console.log(p)
 
-  p.innerText = "hello"
 }
