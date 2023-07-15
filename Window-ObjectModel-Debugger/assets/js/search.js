@@ -25,7 +25,7 @@ export function findElementsOfTag(tag) {
 
 export function findElementsOfClass(cls) {
     // Return an array of elements that have are of class `cls`
-    return Array.form(document.querySelectorAll(`${cls}`))
+    return Array.from(document.getElementsByClassName(`${cls}`))
 
     // Your code here
 }
