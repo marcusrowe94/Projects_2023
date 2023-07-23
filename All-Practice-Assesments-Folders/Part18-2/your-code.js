@@ -87,14 +87,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const response = await fetch(url);
     const data = await response.json();
     const dictionaryObj = data[0]
-    console.log(data)
    const word = dictionaryObj.word
-    console.log(dictionaryObj)
+    const definition = dictionaryObj.meanings[0].definitions[0].definition
 
   const ul = document.createElement("ul")
   const li = document.createElement("li")
+  const li1 = document.createElement("li")
+
   li.innerText = `Word ${word}`
+  li1.innerText = ` Definition ${definition}`
   resultArea.appendChild(ul)
   ul.appendChild(li)
+  ul.appendChild(li1)
   });
 });
