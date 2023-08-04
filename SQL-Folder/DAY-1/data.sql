@@ -4,5 +4,4 @@ CREATE TABLE friends(
     last_name VARCHAR(255) NOT NULL
 )
 INSERT INTO friends
-VALUES
-(birthday, best_friends_name, mothers_name)
+VALUES (birthday, best_friends_name, mothers_name)

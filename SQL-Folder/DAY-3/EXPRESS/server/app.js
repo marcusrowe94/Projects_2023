@@ -4,13 +4,13 @@ const app = express();
 
 // Database file - DO NOT MODIFY
 // DO NOT DO THIS - USE .env VARIABLE INSTEAD
-const DATA_SOURCE = "app.db";
+require("dotenv").config();
+const DATA_SOURCE = "app.db"
 
 /**
  * Step 1 - Connect to the database
  */
 // Your code here
-require("dotenv").config();
 
 const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database(
@@ -80,6 +80,16 @@ app.get("/colors/add/:name", (req, res, next) => {
    *  - return new row
    */
   // Your code here
+  db.run(sql, params, (err, row )=>{
+    if(err){
+      next(err)
+    }else{
+      db.get(sqlLast, [], (err, row)=>{
+        res.json(row)
+
+      })
+    }
+  })
 });
 
 // Root route - DO NOT MODIFY
