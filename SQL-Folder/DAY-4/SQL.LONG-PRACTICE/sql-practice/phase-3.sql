@@ -5,9 +5,10 @@ VALUES("Rachel",1111111111);
 
 UPDATE customers
 SET points = 6
-WHERE id = 1;
+WHERE id = "Rachel";
+INSERT INTO coffee DEFAULT VALUES;
 
-SELECT points FROM customers WHERE id = 1;
+
 
 INSERT INTO customers(name, email, phone)
 VALUES
@@ -16,18 +17,31 @@ VALUES
 
 UPDATE customers
 SET points = 8
-WHERE id = 3;
+WHERE name = "Phoebe";
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
 
 UPDATE customers
 SET points = 10
-WHERE id = 1;
+WHERE name = "Rachel";
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+
 
 UPDATE customers
 SET points = 9
-WHERE id = 2;
-UPDATE customers
-SET is_redeemed = 
-WHERE id = 1;
+WHERE name = "Monica";
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+
+-- UPDATE coffee
+-- SET is_redeemed = 1
+-- WHERE id = 1;
 
 INSERT INTO customers(name, email)
 VALUES
@@ -35,4 +49,19 @@ VALUES
 ("Chandler", "chandler@friends.show"),
 ("Ross","ross@friends.show");
 
-SELECT * FROM customers;
+UPDATE customers
+SET points = 11
+WHERE name = "Ross";
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+INSERT INTO coffee DEFAULT VALUES;
+
+-- UPDATE coffee
+-- SET is_redeemed = 0
+-- WHERE id = 3;
+
+SELECT * FROM coffee;
+-- SELECT * FROM customers;

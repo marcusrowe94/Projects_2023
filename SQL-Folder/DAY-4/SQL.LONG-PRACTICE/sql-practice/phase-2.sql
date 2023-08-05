@@ -14,8 +14,8 @@ CREATE TABLE customers(
 DROP TABLE IF EXISTS coffee;
 
 CREATE TABLE coffee(
-    id INT PRIMARY KEY,
-    is_redeemed BOOLEAN,
-    ordered_at TIMESTAMP
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    is_redeemed BOOLEAN DEFAULT 0,
+    ordered_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 
 );
